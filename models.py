@@ -1,20 +1,16 @@
 # -*- encoding: utf-8 -*-
 # begin
 
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 from datetime import datetime
 datetime.utcnow()
-
-#app = Flask(__name__)
-
 from todoapp import app
-#from models import db
 
 db = SQLAlchemy(app)
 
 
-class Todo (db.Model):
+class Todo(db.Model):
     __tablename__ = "todo"
     id = db.Column('id', db.Integer, primary_key = True)
     category_id = db.Column('category_id', db.Integer, db.ForeignKey('category.id'))
@@ -27,13 +23,13 @@ class Todo (db.Model):
     category = db.relationship('Category', foreign_keys=category_id)
 
     
-    def __init__(self, category, priority, description):
-        
-        self.category = category
-        self.priority = priority
-        self.description = description
-        self.creation_date = datetime.utcnow()
-        self.is_done = False
+#    def __init__(self, category, priority, description):
+#        
+#        self.category = category
+#        self.priority = priority
+#        self.description = description
+#        self.creation_date = datetime.utcnow()
+#        self.is_done = False
     
 class Priority (db.Model):
     __tablename__ = "priority"
@@ -47,6 +43,7 @@ class Category (db.Model):
     name = db.Column('name', db.Unicode)
     
     
+
     
     
 
