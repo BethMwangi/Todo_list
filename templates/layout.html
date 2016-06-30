@@ -3,26 +3,30 @@
 
 
 <html class="no-js" lang="en" dir="ltr">
- {% block head %}
-    <head>
+{% block head %}
+
+<head>
     <meta charset="utf-8">
-        <title>My Todo List</title>
-        {% endblock %}
+    <title>My Todo List</title>
+    {% endblock %}
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-        
-        <link rel="stylesheet" href="css/foundation.css">
+
+
+
+
     <link rel="stylesheet" href="css/app.css">
-      <link rel="stylesheet" href="/static/css/foundation.min.css">
-      <script src="/static/js/foundation.min.js"></script>
-      <script src="/static/js/app.js"></script>
-   <script>
-        $(document).ready(function () {
+    <link rel="stylesheet" href="/static/css/foundation.min.css">
+    <script src="/static/js/foundation.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
             $('.selectpicker').selectpicker();
         })
+
     </script>
-         <style type="text/css">
+    <style type="text/css">
         #rounded {
             border: 2px solid #7087a1;
             padding: 10px 20px;
@@ -30,69 +34,72 @@
             border-radius: 10px;
             width: 350px;
         }
-         #category-table {
+        
+        #category-table {
             width: 300px;
-             border: 0px;
-         }
-         #category-table tbody tr > td.success {
-             background-color: #8cbfee !important;
+            border: 0px;
         }
+        
+        #category-table tbody tr > td.success {
+            background-color: #8cbfee !important;
+        }
+        
         #todo-table {
             width: 1000px;
         }
+        
         #todo-table tbody tr.success {
             background-color: #8cbfee !important;
         }
+        
         form {
             display: inline-block;
         }
-    </style>   
-  </head>
-  <body>
-   <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">Menu</div>
-</div>
 
-<div class="top-bar" id="example-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">ToDo app</li>
-      <li>
-        <a href="#">One</a>
-       
-          
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-    
-</div>
+    </style>
+</head>
 
-   <div class="container-fluid">
-      {% with messages= get_flashed_messages() %}
-       {% if messages %}
-       {% for message in messages %}
-       <div class="alert alert-danger" role="alert">{{ message }}</div>
-{% endfor %}
-        {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}      
-      </div>   
- 
-     
-<footer id="footer">
-    <div class="container">
-        <hr>
-        <p class="text-center">Todo App built using Flask, SQLAlchemy, Vertabelo, PostgreSQL and Foundation6</p>
+<body>
+    <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
     </div>
-</footer>
-      
+
+    <div class="top-bar" id="example-menu">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">ToDo app</li>
+                <li>
+                    <a href="#">One</a>
+
+
+                </li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        {% with messages= get_flashed_messages() %} {% if messages %} {% for message in messages %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <hr>
+            <p class="text-center">Todo App built using Flask, SQLAlchemy, Vertabelo, PostgreSQL and Foundation6</p>
+        </div>
+    </footer>
+
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-  </body>
+</body>
+
 </html>
