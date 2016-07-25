@@ -13,10 +13,13 @@
                   <a href="{{ url_for('list_todos', name=category.name) }}">{{ category.name }}</a>
             </td>
              <td>
-                            <a  class="btn btn-sm btn-default" href="{{ url_for('edit_category', category_id=category.id) }}">{{ icon('edit') }} Edit</a>
+                
+                             <a class="button success" href="{{ url_for('edit_category', category_id=category.id) }}">{{ icon('edit') }} Edit</a>
                         </td>
                          <form id="catdel-{{ category.name }}" action="{{ url_for('delete_category', category_id=category.id) }}" method="post">
-                                <a class="btn btn-sm btn-danger" onclick="$('#catdel-{{ category.name }}').submit();">{{ icon('trash') }} Delete</a>
+
+                           
+                                <a class="button alert" onclick="$('#catdel-{{ category.name }}').submit();">{{ icon('trash') }} Delete</a>
                             </form>
 </td>
             </tr>
@@ -43,14 +46,14 @@
                     <td>{{ todo.priority.name }}</td>
                     <td>{{ todo.creation_date }}</td>
                     <td>
-                          <a class="btn btn-xs btn-default{% if todo.is_done %} disabled{% endif %}"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >{{ icon('edit') }} Edit</a>
+                          <a class="button success{% if todo.is_done %} disabled{% endif %}"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >{{ icon('edit') }} Edit</a>
                             <form id=delform action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
-                                {#<input class="btn btn-xs btn-danger" type="submit" name="delete_todo" value="Delete">#}
-                                <a onclick="$('#delform').submit();" class="btn btn-xs btn-danger" id="delete_todo" href="#">{{ icon('trash') }} Delete</a>
+                                {#<input class="button alert" type="submit" name="delete_todo" value="Delete">#}
+                                <a onclick="$('#delform').submit();" class="button alert"id="delete_todo" href="#">{{ icon('trash') }} Delete</a>
                             </form>
                             <form id=isdone action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
                                 {#<input class="btn btn-xs btn-default" type="submit" name="mark_done" value="Done"{% if todo.is_done %} disabled{% endif %}>#}
-                                <a onclick="$('#isdone').submit()" class="btn btn-xs btn-default" id="mark_done"{% if todo.is_done %} disabled{% endif %}>{{ icon('check') }} Done</a>
+                                <a onclick="$('#isdone').submit()" class="button" id="mark_done"{% if todo.is_done %} disabled{% endif %}>{{ icon('check') }} Done</a>
                             </form>
                         </td>
                 </tr>

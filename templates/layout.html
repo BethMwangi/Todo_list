@@ -49,7 +49,9 @@ function menuAction() {
 
 <body>
 
-<div class="row navbar">
+<div class="container-main">
+<div class=" wrapper row lmedium-12 small-12 columns navbar">
+   <!--  <div class="wrapper"> -->
    <div class="canvas">
     <div class="menu">
       <ul>
@@ -79,7 +81,7 @@ function menuAction() {
       
           </div>
  -->
-    <div class="top-bar" id="example-menu">
+   <!--  <div class=" row top-bar" id="example-menu">
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li class="menu-text">My Todo app</li>
@@ -93,19 +95,19 @@ function menuAction() {
             </ul>
         </div>
 
-    </div>
-
+    </div> -->
+<div class="row">
     <div class="container-fluid">
         {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
         <div class="alert alert-danger" role="alert">{{ message }}</div>
         {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
-    </div>
+    </div></div>
     <div class="container-fluid">
         Footer
     </div>
 
 
-
+</div>
 
 </body>
 

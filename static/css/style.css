@@ -1,4 +1,4 @@
-body{
+.container-main{
   margin: 0 auto;
   background-color: #F16669;
 }
@@ -82,7 +82,7 @@ a:hover,a:focus{
 .navbar{
   width: 100%;
   height: 100px;
-  background-color: green;
+  background-color: #1CA497;
 }
 .toggle-menu {
   font-size: 4rem;
