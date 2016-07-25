@@ -1,12 +1,14 @@
 # -*- encoding: utf-8 -*-
 # begin
 
-from flask_sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 
 from datetime import datetime
 datetime.utcnow()
 from todoapp import app
 
+
+# app = Flask (__name__)
 db = SQLAlchemy(app)
 
 
@@ -22,14 +24,7 @@ class Todo(db.Model):
     priority = db.relationship('Priority', foreign_keys=priority_id)
     category = db.relationship('Category', foreign_keys=category_id)
 
-    
-#    def __init__(self, category, priority, description):
-#        
-#        self.category = category
-#        self.priority = priority
-#        self.description = description
-#        self.creation_date = datetime.utcnow()
-#        self.is_done = False
+
     
 class Priority (db.Model):
     __tablename__ = "priority"

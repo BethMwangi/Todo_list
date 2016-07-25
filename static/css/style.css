@@ -1,0 +1,108 @@
+body{
+  margin: 0 auto;
+  background-color: #F16669;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.eot?3qkin2');
+  src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.eot?#iefix3qkin2') format('embedded-opentype'),
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.woff?3qkin2') format('woff'),
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.ttf?3qkin2') format('truetype'),
+    url('fhttps://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.svg?3qkin2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  margin: 200px auto;
+}
+div a {
+  text-decoration: none;
+}
+a {
+  color: #fff;
+}
+a:hover,a:focus{
+  text-decoration: none;
+}
+.svg-wrapper {
+  position: relative;
+  top: 35%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 320px;
+  max-height:60px;
+  cursor:default;
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #ECCC19;  
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: serif;
+  font-size: 2.5rem;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+  text-align:center;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+.wrapper {
+    position: relative; 
+    overflow: hidden;
+    width: 100%; 
+    height: 3000px;
+}
+.canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateX(0);
+    transition: .3s ease all;
+}
+.menu {
+    height: 100%;
+    position: absolute;
+    transform: translateX(-300px);
+    width: 50px;
+    background: #ECCC19;
+    padding: 3rem 15rem 3rem 1rem;
+}
+.navbar{
+  width: 100%;
+  height: 100px;
+  background-color: green;
+}
+.toggle-menu {
+  font-size: 4rem;
+  margin-left: 10px;
+}
+
+.wrapper.show-menu .canvas {
+    transform: translateX(300px);
+}
+
+.menu ul li {
+  list-style: none;
+  padding: 5%;
+  font-size: 2rem;
+}
+.menu ul li a {
+  font-family: 'icomoon';
+  margin-left: 40px;
+}
+
+.menu ul li a:hover {
+  color: #F16669; 
+}
