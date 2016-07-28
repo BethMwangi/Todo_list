@@ -26,17 +26,20 @@
             {% endfor %}
         </table>
     </div>
-        <div class="medium-8 columns">
+        <div class="medium-8  small-8 columns">
+
             {% if todos|count > 0 %}
-            <h3 class="lead">My TODOs</h3>
+             <h3> My Todos</h3>
+           
             <table id ="todo-table" class="todo">
 
                 <tr>
                     <th>#</th>
                     <th>Description</th>
                     <th>Category</th>
-                    <th>Priority</th>
+                    {#<th>Priority</th>#}
                     <th>Creation date</th>
+                    <th>Actions</th>
                 </tr>
                 {%- for todo in todos %}
                   <tr {% if todo.is_done %}class="success"{% endif %}>
@@ -46,13 +49,13 @@
                     <td>{{ todo.priority.name }}</td>
                     <td>{{ todo.creation_date }}</td>
                     <td>
-                          <a class="button success{% if todo.is_done %} disabled{% endif %}"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >{{ icon('edit') }} Edit</a>
-                            <form id=delform action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
+                          <a class="button success{% if todo.is_done %} disabled{% endif %}"  href="{{ url_for('update_todo', todo_id=todo.id) }}" ><i class="fa fa-pencil"</i>}} Edit</a>
+                            <form id= delform action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
                                 {#<input class="button alert" type="submit" name="delete_todo" value="Delete">#}
                                 <a onclick="$('#delform').submit();" class="button alert"id="delete_todo" href="#">{{ icon('trash') }} Delete</a>
                             </form>
                             <form id=isdone action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
-                                {#<input class="btn btn-xs btn-default" type="submit" name="mark_done" value="Done"{% if todo.is_done %} disabled{% endif %}>#}
+                                {#<input class="button default" type="submit" name="mark_done" value="Done"{% if todo.is_done %} disabled{% endif %}>#}
                                 <a onclick="$('#isdone').submit()" class="button" id="mark_done"{% if todo.is_done %} disabled{% endif %}>{{ icon('check') }} Done</a>
                             </form>
                         </td>
@@ -64,5 +67,5 @@
             {% endif %}
         </div>
     </div>
-</div>
+
 {% endblock %}

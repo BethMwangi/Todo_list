@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
  <link rel="stylesheet" type="text/css"  href="/static/css/foundation.min.css">
+ <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <script src="/static/css/foundation.min.css"></script>
 
@@ -97,8 +98,14 @@ function menuAction() {
 
     </div> -->
 <div class="row">
+
+
+</div>
+
+<div class="row">
     <div class="container-fluid">
-        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+        {% with messages = get_flashed_messages() %} {% if messages %} 
+        {% for message in messages %}
         <div class="alert alert-danger" role="alert">{{ message }}</div>
         {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
     </div></div>
